@@ -20,6 +20,7 @@
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-safe: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
         }
 
         body {
@@ -339,6 +340,98 @@
             border-radius: 2px;
         }
 
+        /* Project Explanation Section */
+        .project-explanation {
+            background: linear-gradient(135deg, #f6f9fc 0%, #e9f3ff 100%);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+
+        .explanation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .explanation-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .explanation-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .explanation-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .explanation-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .explanation-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #666;
+        }
+
+        .explanation-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--gradient-3);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 50px auto;
+            text-align: center;
+            color: white;
+        }
+
+        .video-container {
+            margin: 30px auto;
+            max-width: 800px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .btn-watch {
+            background: white;
+            color: #4facfe;
+            margin-top: 20px;
+        }
+
         /* Mission Vision Goals */
         .mvg-container {
             display: grid;
@@ -381,6 +474,52 @@
         .mvg-card p {
             color: #666;
             line-height: 1.8;
+        }
+
+        /* Safe Space Section */
+        .safe-space-section {
+            background: var(--gradient-safe);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .safe-space-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .safe-space-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        .safe-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .safe-principle {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .safe-principle h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .safe-principle p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Values Section */
@@ -504,6 +643,12 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .explanation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Animations */
         .fade-in {
             opacity: 0;
@@ -574,7 +719,9 @@
             <div class="logo">Connect Bern ❤️</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#projects">Our Projects</a>
                 <a href="#about">About</a>
+                <a href="#safe-space">Safe Space</a>
                 <a href="#values">Values</a>
                 <a href="#stay">Stay With Us</a>
                 <a href="#contact">Contact</a>
@@ -591,10 +738,12 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-content">
             <a href="#home" style="animation-delay: 0.1s">Home</a>
+            <a href="#projects" style="animation-delay: 0.15s">Our Projects</a>
             <a href="#about" style="animation-delay: 0.2s">About</a>
+            <a href="#safe-space" style="animation-delay: 0.25s">Safe Space</a>
             <a href="#values" style="animation-delay: 0.3s">Values</a>
-            <a href="#stay" style="animation-delay: 0.4s">Stay With Us</a>
-            <a href="#contact" style="animation-delay: 0.5s">Contact</a>
+            <a href="#stay" style="animation-delay: 0.35s">Stay With Us</a>
+            <a href="#contact" style="animation-delay: 0.4s">Contact</a>
         </div>
     </div>
 
@@ -609,6 +758,54 @@
             </div>
         </div>
         <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Project Explanation Section -->
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">Understanding Our Projects</h2>
+        <div class="project-explanation">
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 40px; color: #666;">
+                We operate two interconnected initiatives to achieve our vision of a more connected society
+            </p>
+            <div class="explanation-grid">
+                <div class="explanation-card">
+                    <h3>🌟 Connect Bern - The Main Project</h3>
+                    <p>Connect Bern is our primary initiative - a physical and social space where anyone can come to experience genuine human connection.</p>
+                    <p><strong>What we offer:</strong></p>
+                    <ul>
+                        <li>A welcoming space near Wankdorf where socializing is the primary goal</li>
+                        <li>Daily activities and events focused on bringing people together</li>
+                        <li>WhatsApp community groups for ongoing connection</li>
+                        <li>No commercial interests or hidden agendas - just people being people</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-style: italic;">Perfect for: Anyone seeking connection, locals wanting to meet new people, travelers, or simply those who want to combat loneliness</p>
+                </div>
+                <div class="explanation-card">
+                    <h3>🏠 Staying in Bern - The Volunteer Project</h3>
+                    <p>Staying in Bern is our intensive volunteer program designed for those who want to deeply engage with and help realize our vision.</p>
+                    <p><strong>What makes it special:</strong></p>
+                    <ul>
+                        <li>Long-term volunteers (2+ weeks) who actively help build the community</li>
+                        <li>Shared sleeping space creating "permanent international sleepover vibes"</li>
+                        <li>Morning exercises and community rituals</li>
+                        <li>An intense, transformative experience of communal living</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-style: italic;">This volunteer program is crucial for maintaining the energy and spirit of Connect Bern, creating the crowd and context that makes our mission possible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section fade-in">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Learn More About Our Mission</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Watch our founders explain the vision, mission, goals, and values of Connect Bern</p>
+        
+        <div class="video-container">
+            <iframe title="Explaining the mission, vision, goals and values of the project" width="560" height="315" src="https://tube.dev.displ.eu/videos/embed/o5QW62oTW7dt7DYNF2tFnq" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+        </div>
+        
+        <a href="https://tube.dev.displ.eu/w/o5QW62oTW7dt7DYNF2tFnq" target="_blank" class="btn btn-watch">Watch Full Video on PeerTube</a>
     </section>
 
     <!-- About Section -->
@@ -626,6 +823,49 @@
             <div class="mvg-card">
                 <h3>🌟 Our Goals</h3>
                 <p>Create events that bring people together, foster a spirit of inclusion and joy, and build a network of spaces where loneliness has no place and everyone feels they belong.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safe Space Section -->
+    <section id="safe-space" class="fade-in">
+        <div class="safe-space-section">
+            <div class="safe-space-content">
+                <h2>Creating a Safe Space for All</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 30px;">
+                    We are deeply committed to creating an environment where everyone feels safe, respected, and valued. This isn't just a principle - it's a fundamental requirement that we actively work on every single day.
+                </p>
+                
+                <div class="safe-principles">
+                    <div class="safe-principle">
+                        <h4>🛡️ Zero Tolerance</h4>
+                        <p>We have zero tolerance for violence, harassment, or any form of discrimination. Continuous non-consensual behavior is taken seriously and addressed immediately.</p>
+                    </div>
+                    <div class="safe-principle">
+                        <h4>🤝 Active Protection</h4>
+                        <p>We actively protect vulnerable groups, especially women, LGBTQ+ individuals, people of color, and minorities. Their safety and comfort is our priority.</p>
+                    </div>
+                    <div class="safe-principle">
+                        <h4>👂 Victim-First Approach</h4>
+                        <p>When conflicts arise, we prioritize the needs and safety of those who feel uncomfortable or threatened. We listen, we believe, and we act.</p>
+                    </div>
+                    <div class="safe-principle">
+                        <h4>📢 Clear Communication</h4>
+                        <p>Signs, guidelines, and open discussions ensure everyone understands our boundaries. We're not afraid to address uncomfortable topics to maintain safety.</p>
+                    </div>
+                    <div class="safe-principle">
+                        <h4>🌈 Inclusive by Design</h4>
+                        <p>Everyone is welcome, but if someone makes others feel unsafe for unjustified reasons, we address it immediately and decisively.</p>
+                    </div>
+                    <div class="safe-principle">
+                        <h4>💬 Women-Only Spaces</h4>
+                        <p>We maintain dedicated women-only groups and spaces, recognizing the need for additional safe environments within our community.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 40px; font-size: 1.1rem; font-style: italic; text-align: center;">
+                    "Making everyone feel comfortable means being aware that not everyone starts from the same place. We work actively to level the playing field and ensure that Connect Bern is a space where humanity can truly connect - safely, respectfully, and joyfully."
+                </p>
             </div>
         </div>
     </section>
@@ -669,11 +909,11 @@
 
     <!-- Staying in Bern Section -->
     <section id="stay" class="fade-in">
-        <h2 class="section-title">Staying in Bern</h2>
+        <h2 class="section-title">Staying in Bern - Volunteer Program</h2>
         <div class="stay-section">
             <div class="stay-content">
                 <h3 style="font-size: 2rem; margin-bottom: 20px;">Experience the "Permanent International Sleepover Vibes"</h3>
-                <p style="font-size: 1.2rem; line-height: 1.8;">For those seeking deeper connection, we offer a unique communal living experience. Sleep in our shared space, wake up to morning exercises, and experience the transformative power of living in true community.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8;">As a volunteer in our Staying in Bern program, you become an essential part of realizing our vision. This isn't just accommodation - it's an intense, transformative experience where you help create the very essence of Connect Bern.</p>
                 
                 <div class="stay-features">
                     <div class="stay-feature">
@@ -682,19 +922,19 @@
                     </div>
                     <div class="stay-feature">
                         <h4>🌅 Morning Rituals</h4>
-                        <p>Start your day with community</p>
+                        <p>Start your day with community exercises</p>
                     </div>
                     <div class="stay-feature">
-                        <h4>🤝 Long-term Welcome</h4>
-                        <p>Stay for 2 weeks or more</p>
+                        <h4>🤝 Long-term Commitment</h4>
+                        <p>Minimum 2 weeks as a volunteer</p>
                     </div>
                     <div class="stay-feature">
                         <h4>🌍 International Mix</h4>
-                        <p>Meet people from everywhere</p>
+                        <p>Meet volunteers from everywhere</p>
                     </div>
                 </div>
                 
-                <p style="margin-top: 30px; font-style: italic;">Perfect for: Volunteers, travelers, locals wanting to experience community, and anyone seeking genuine human connection</p>
+                <p style="margin-top: 30px; font-style: italic;"><strong>Important:</strong> Staying in Bern volunteers are the backbone of Connect Bern - they create the crowd, maintain the energy, and help newcomers feel welcome. This is for those ready to actively contribute to our mission, not just those seeking free accommodation.</p>
             </div>
         </div>
     </section>
@@ -703,7 +943,7 @@
     <section id="contact" class="fade-in">
         <div class="contact-section">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Connect?</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 30px;">Visit us near Wankdorf in Bern. Everyone is welcome - come for 20 minutes or stay for weeks!</p>
+            <p style="font-size: 1.3rem; margin-bottom: 30px;">Visit us near Wankdorf in Bern. Everyone is welcome - come for 20 minutes or volunteer for weeks!</p>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -730,6 +970,7 @@
     <footer>
         <p>&copy; 2024 Connect Bern - A Space for Human Connection</p>
         <p style="margin-top: 10px; opacity: 0.8;">No commercial interests • No cult • Just people being people ❤️</p>
+        <p style="margin-top: 10px; opacity: 0.8;">A safe space where everyone belongs</p>
     </footer>
 
     <script>
